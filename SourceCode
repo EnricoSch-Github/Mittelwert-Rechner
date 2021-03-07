@@ -1,0 +1,73 @@
+namespace Durchschnitt_Berechner
+{
+    public partial class Form1 : Form
+    {
+        double Zahla = 10;
+        double Zahlc = 0;
+        double Zahld,Zahlb = 0;
+        
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Berechung();
+            Zahlc = 0;
+            Zahlb = 0;
+            Zahld = 0;
+        }
+
+        public void Berechung()
+        {
+            Zahlc = Convert.ToDouble(textBox2.Text);
+            Zahld = Convert.ToDouble(textBox3.Text);
+            double Ergebnis = Zahlc / Zahld;
+            textBox1.Text = " = " + Ergebnis.ToString() + "Ø ";
+            textBox2.Text = "0";
+            textBox3.Text = "0";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Zahlb++;
+            string Teiler = Zahlb.ToString();
+            textBox3.Text = Teiler;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Zahlb--;
+            string Teiler = Zahlb.ToString();
+            textBox3.Text = Teiler;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Zahld++;
+            string Summe = Zahld.ToString();
+            textBox2.Text = Summe;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Zahld--;
+            string Summe = Zahld.ToString();
+            textBox2.Text = Summe;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Zahld += Zahla;
+            string Summe = Zahld.ToString();
+            textBox2.Text = Summe;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Zahld -= Zahla;
+            string Summe = Zahld.ToString();
+            textBox2.Text = Summe;
+        }
+    }
+}
